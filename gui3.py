@@ -78,6 +78,7 @@ class InvalidScreen(tk.Tk):
         self.button = tk.Button(self, text="Exit", command=self.on_button)
         
 
+
         self.lbl.pack()
         self.button.pack()
 
