@@ -47,7 +47,7 @@ while True:
     shutil.move(PATH+str1,SAFEPATH+m.phone)
    except:
     num=str(random.random())[11:]
-    shutil.move(os.path.join(PATH+str1),os.path.join(SAFEPATH,w.phone+num+str1))
+    shutil.move(os.path.join(PATH+str1),os.path.join(SAFEPATH,m.phone,num+str1))
 
    continue
   check= qr.decode(PATH+str1)
@@ -76,8 +76,8 @@ while True:
    try:
     shutil.move(PATH+str1,DOCPATH+w.phone)
    except:
-    num=str(random.random())[11:]
-    shutil.move(os.path.join(PATH+str1),os.path.join(DOCPATH,w.phone+num+str1))
+    num=str(random.random())[10:]
+    shutil.move(os.path.join(PATH+str1),os.path.join(DOCPATH,w.phone,num+str1))
 
    #if mv==0:
    if check:
@@ -108,8 +108,8 @@ while True:
    try:
     shutil.move(PATH+str1,DOCPATH+qr.data)
    except:
-    num=str(random.random())[11:]
-    shutil.move(os.path.join(PATH+str1),os.path.join(DOCPATH,qr.data+num+str1))
+    num=str(random.random())[10:]
+    shutil.move(os.path.join(PATH+str1),os.path.join(DOCPATH,qr.data,num+str1))
 
    #print mv
    #if mv==0:
