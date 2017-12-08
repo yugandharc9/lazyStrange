@@ -56,7 +56,8 @@ while True:
     shutil.move(PATH+str1,DOCPATH+w.phone)
    except:
     num=str(random.random())[11:]
-    shutil.move(PATH+str1,DOCPATH+'/%s/'%w.phone+num+str1)
+    shutil.move(os.path.join(PATH+str1),os.path.join(DOCPATH,w.phone+num+str1))
+
    #if mv==0:
    if check:
     showfunc(str(qr.data))
@@ -87,7 +88,8 @@ while True:
     shutil.move(PATH+str1,DOCPATH+qr.data)
    except:
     num=str(random.random())[11:]
-    shutil.move(PATH+str1,DOCPATH+'/%s/'%qr.data+num+str1)
+    shutil.move(os.path.join(PATH+str1),os.path.join(DOCPATH,qr.data+num+str1))
+
    #print mv
    #if mv==0:
    showfunc(str(qr.data))

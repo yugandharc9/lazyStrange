@@ -85,6 +85,20 @@ class InvalidScreen(tk.Tk):
     def on_button(self):
         self.destroy()
 
+class InvalidFileScreen(tk.Tk):
+    
+    def __init__(self):
+        tk.Tk.__init__(self)
+        self.entry = tk.Entry(self)
+        self.lbl=tk.Label(self,text="Cannot process expected Image file moving your data safely in \'quarantine\' folder")
+        self.button = tk.Button(self, text="Exit", command=self.on_button)
+        
+
+        self.lbl.pack()
+        self.button.pack()
+
+    def on_button(self):
+        self.destroy()
 
 class ErrorScreen(tk.Tk):
     
