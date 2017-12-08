@@ -13,7 +13,7 @@ class SampleApp(tk.Tk):
 
         self.button = tk.Button(self, text="AutoSort", command=self.on_button)
                 
-        self.lbl1=tk.Label(self,text="\n\nThingslab - AutoSort Utility \n can \n1.Tag documents with Unique Id\n2.Sort Documents in blink of an eye - just paste them in \'watcher\' folder \n 3.Fetch documents by unique identifier or by Image\n")
+        self.lbl1=tk.Label(self,text="\n\nThingslab - AutoSort Utility \n can \n1.Tag documents with Unique Id\n2.Sort Documents in blink of an eye - just paste them in \'watcher\' folder \n 3.Fetch documents by unique identifier or by Image\nSupport - 9665019998\n")
 
         self.entry.insert(0,passer) 
 
@@ -45,7 +45,7 @@ class DampleApp(tk.Tk):
 
         self.button = tk.Button(self, text="Fetch", command=self.on_button)
                 
-        self.lbl1=tk.Label(self,text="\n\nThingslab - AutoSort Utility \n can \n1.Tag documents with Unique Id\n2.Sort Documents in blink of an eye - just paste them in \'watcher\' folder \n 3.Fetch documents by unique identifier or by Image\n")
+        self.lbl1=tk.Label(self,text="\n\nThingslab - AutoSort Utility \n can \n1.Tag documents with Unique Id\n2.Sort Documents in blink of an eye - just paste them in \'watcher\' folder \n 3.Fetch documents by unique identifier or by Image\nSupport - 9665019998\n")
 
         self.entry.insert(0,'') 
 
