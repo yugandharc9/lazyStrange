@@ -1,6 +1,6 @@
 import commands,qrtools
-from config import INSTALLPATH,PATH,DOCPATH
-from gui3 import InvalidScreen,SampleApp 
+from config import SAFEPATH,INSTALLPATH,PATH,DOCPATH
+from gui3 import PampleApp,InvalidScreen,SampleApp 
 from PIL import Image
 import qrcode
 import shutil,os
@@ -29,6 +29,27 @@ while True:
   #print str1
  
   qr=qrtools.QR()
+  try:
+   safe= qr.decode(PATH+str1)
+  except IOError:
+   f=open(INSTALLPATH+'last','r')
+   passed=f.read().replace('\n','')        
+   f.close()
+   m=PampleApp(passed)
+   m.mainloop()
+
+   if not os.path.exists(SAFEPATH+m.phone):
+    os.makedirs(os.path.join(SAFEPATH,m.phone))
+   #mv=os.system('mv %s ~/docs/%s/'%(PATH+str1,w.phone))
+   files=os.listdir(PATH)
+   #for f in files:
+   try:
+    shutil.move(PATH+str1,SAFEPATH+m.phone)
+   except:
+    num=str(random.random())[11:]
+    shutil.move(os.path.join(PATH+str1),os.path.join(SAFEPATH,w.phone+num+str1))
+
+   continue
   check= qr.decode(PATH+str1)
   if not check:
    f=open(INSTALLPATH+'last','r')
@@ -79,7 +100,7 @@ while True:
    #os.system('mkdir -p ~/docs/%s'%str(qr.data))
   
    if not os.path.exists(DOCPATH+qr.data):
-    os.makedirs(DOCPATH+qr.data)
+    os.makedirs(os.path.join(DOCPATH,qr.data))
    #mv=os.system('mv %s ~/docs/%s/'%(PATH+str1,str(qr.data)))
   
    files=os.listdir(PATH)

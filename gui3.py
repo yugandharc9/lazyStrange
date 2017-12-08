@@ -114,3 +114,37 @@ class ErrorScreen(tk.Tk):
 
     def on_button(self):
         self.destroy()
+
+class PampleApp(tk.Tk):
+    
+    def __init__(self,passer):
+        tk.Tk.__init__(self)
+        self.title(u"ThingsLab - AutoSort")
+        self.entry = tk.Entry(self,width=50,borderwidth=5,text="d")
+
+        self.lbl=tk.Label(self,text="Cannot process expected Image file moving your data safely in \'quarantine\' folder\nEnter Unique Identifier",font=3)
+
+        self.lbl2=tk.Label(self,text='\n')
+
+        self.button = tk.Button(self, text="Quarantine", command=self.on_button)
+                
+        self.lbl1=tk.Label(self,text="\n\nThingslab - AutoSort Utility \n can \n1.Tag documents with Unique Id\n2.Sort Documents in blink of an eye - just paste them in \'watcher\' folder \n 3.Fetch documents by unique identifier or by Image\n")
+
+        self.entry.insert(0,passer) 
+
+        self.lbl2.pack()
+        self.lbl.pack()
+
+        self.lbl2.pack()
+        self.entry.pack()
+
+        self.lbl2.pack()
+        self.button.pack()
+        self.lbl1.pack()
+    def on_button(self):
+        self.phone=self.entry.get().replace(' ','')
+        filewriter(self.phone)
+        self.destroy()
+
+
+
