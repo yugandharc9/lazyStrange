@@ -1,4 +1,4 @@
-from gui3 import ErrorScreen,SampleApp
+from gui3 import ErrorScreen,DampleApp
 from config import DOCPATH
 import commands,os
 
@@ -15,6 +15,6 @@ def showfunc(data):
    os.system('eog %s'%(DOCPATH+'/'+data+'/'+i))
 
  
-w=SampleApp()
+w=DampleApp()
 w.mainloop()
 showfunc(w.phone)

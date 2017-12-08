@@ -1,10 +1,13 @@
 import commands,qrtools
-from config import PATH
+from config import INSTALLPATH,PATH
 from gui3 import InvalidScreen,SampleApp 
 from PIL import Image
 import qrcode
 import os
 from openall import showfunc
+
+
+
 
 def watch():
  return commands.getoutput('cd %s && ls' %(PATH)).split('\n')
@@ -27,7 +30,10 @@ while True:
   qr=qrtools.QR()
   check= qr.decode(PATH+str1)
   if not check:
-   w=SampleApp()
+   f=open(INSTALLPATH+'last','r')
+   passed=f.read().replace('\n','')        
+   f.close()
+   w=SampleApp(passed)
    w.mainloop()
    img=qrcode.make(w.phone)
    img.save(PATH+w.phone)
