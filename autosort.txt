@@ -1,0 +1,10 @@
+Django==1.11.8
+image==1.5.16
+olefile==0.44
+Pillow==4.3.0
+pkg-resources==0.0.0
+pytz==2017.3
+qrcode==5.3
+qrtools==0.0.2
+six==1.11.0
+zbar==0.10
